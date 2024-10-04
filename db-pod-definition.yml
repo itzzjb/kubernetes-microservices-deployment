@@ -1,0 +1,20 @@
+appVersion: v1
+kind: Pod
+metadata:
+  name: db-pod
+  labels:
+    name: db-pod
+    app: demo-voting-app
+spec:
+  containers:
+    - name: db
+      image: postgres
+      ports: 5432
+      # we need to pass in some environment variables for the postgres container
+      # normally we need to pass these values as secrets, for now let's pass them as plain text
+      env:
+        # we are passing those values as name-value pairs in a list
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name: POSTGRES_PASSWORD
+          value: "postgres"
