@@ -1,13 +1,13 @@
 appVersion: v1
 kind: Pod
 metadata:
-  name: db-pod
+  name: postgres-pod
   labels:
-    name: db-pod
+    name: postgres-pod
     app: demo-voting-app
 spec:
   containers:
-    - name: db
+    - name: postgres
       image: postgres
       ports: 5432
       # we need to pass in some environment variables for the postgres container
