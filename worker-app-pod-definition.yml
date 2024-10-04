@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: worker-app-pod
+  labels:
+    name: worker-app-pod
+    app: demo-voting-app
+spec:
+  containers:
+    - name: worker-app
+      image: kodekloud/examplevotingapp_worker:v1
+      # the port section is not needed because worker-app is not needed to be exposed.
+      # the port app gets the data from redis and sends to the db
+      # no one is calling for the worker-app (has no services listening)
