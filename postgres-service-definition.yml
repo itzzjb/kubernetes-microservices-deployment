@@ -6,6 +6,7 @@ metadata:
     name: postgres-service
     app: demo-voting-app
 spec:
+  # We don't even need to specify the type because by default it's ClusterIP
   type: ClusterIP
   ports:
     - targetPort: 5432
