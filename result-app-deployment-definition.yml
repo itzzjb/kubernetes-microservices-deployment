@@ -21,5 +21,5 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: result-app
+      name: result-app-pod
       app: demo-voting-app

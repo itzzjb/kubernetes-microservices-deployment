@@ -13,12 +13,13 @@ spec:
         name: redis-pod
         app: demo-voting-app
     spec:
-      - name: redis
-        image: redis
-        ports:
-          - containerPort: 6379
+      containers:
+        - name: redis
+          image: redis
+          ports:
+            - containerPort: 6379
   replicas: 1
   selector:
-    - matchLabels:
-        name: redis-pod
-        app: demo-voting-app
+    matchLabels:
+      name: redis-pod
+      app: demo-voting-app
