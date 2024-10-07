@@ -9,7 +9,8 @@ spec:
   containers:
     - name: postgres
       image: postgres
-      ports: 5432
+      ports:
+        - containerPort: 5432
       # we need to pass in some environment variables for the postgres container
       # normally we need to pass these values as secrets, for now let's pass them as plain text
       env:
